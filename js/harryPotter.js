@@ -75,14 +75,18 @@ function allocateHouse(houseName, houseArray, houseId, nameInput, houseNumber) {
 }
 
 function playSound(sound1, houseName, nameInput, houseNumber, houseArray) {
-  let audio = new Audio(sound1);
-  audio.play();
-  audio.addEventListener('ended', function () {
+  let audio1 = new Audio(sound1);
+  audio1.play();
+  audio1.addEventListener('ended', function () {
     window.setTimeout(function () {
       showHouse(houseName, nameInput, houseNumber, houseArray);
       let soundFile = 'audio/' + houseName.toLowerCase() + '.wav';
-      let audio = new Audio(soundFile);
-      audio.play();
+      let audio2 = new Audio(soundFile);
+      audio2.play();
+      audio2.addEventListener('ended', function () {
+        document.getElementById("hat").classList.remove("spinner");
+        document.getElementById('nameEntered').disabled = false;
+      });
     }, 1000);
   });
 
@@ -109,9 +113,10 @@ function playAudio(houseName, nameInput, houseNumber, houseArray) {
 
 
 function clickOK() {
-  // result.hidden = true;
-  let nameInput = document.getElementById('name').value;
+  document.getElementById("hat").classList.add("spinner");
 
+  let nameInput = document.getElementById('name').value;
+  document.getElementById('nameEntered').disabled = true;
   do {
     houseNumber = Math.floor(Math.random() * 4) + 1;
     console.log(houseNumber);

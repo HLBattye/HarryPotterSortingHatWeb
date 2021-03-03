@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Harry Potter Sorting Hat</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <h1>Harry Potter Sorting Hat</h1>
   <div id="toHide">
@@ -11,11 +13,13 @@
     <input id="numberOfBeavers" />
     <button onclick="clickOKNumber()">OK</button>
   </div>
-  Name:
-  <input id="name" />
-  <button id="nameEntered" onclick="clickOK()">OK</button>
+  <div id="nameSection">
+    Name:
+    <input id="name" />
+    <button id="nameEntered" onclick="clickOK()">OK</button>
+  </div>
   <div id="stage">
-    <img id="spinner" src="images/hat.jpg" />
+    <img id="hat" src="images/hat.jpg" />
   </div>
   <div id="result">
   </div>
@@ -29,4 +33,5 @@
   </table>
   <script src="js/harryPotter.js"></script>
 </body>
+
 </html>

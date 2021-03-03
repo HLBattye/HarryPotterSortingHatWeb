@@ -16,11 +16,12 @@
     transform: rotateY(359deg);
   }
 }
-
+html {
+  font-family: 'Harry P';
+}
 
 h1 {
-  font-family: 'Harry P';
-  font-size: 72px;
+  font-size: 100px;
 }
 
 .image {
@@ -57,7 +58,7 @@ h1 {
 }
 
 .result {
-  font-size: 20pt;
+  font-size: 30pt;
   opacity: 0;
   color:red;
   position: relative;
@@ -65,7 +66,7 @@ h1 {
 }
 
 .alternative div {
-  font-size: 20pt;
+  font-size: 30pt;
   opacity: 1;
   color:blue;
   position: relative;
@@ -86,40 +87,23 @@ h1 {
   background-color: black;
 }
 
-td#Hufflepuffs {
-  color: yellow;
-  animation: delayResult 5s ease-in 2s;
-  animation-name: fade;
-  animation-fill-mode: both;
-  animation-duration: 2s;
+table th:first-child{
+  color: rgb(255, 219, 0);
 }
 
-td#Slytherins {
-  color:green;
-  animation: delayResult 5s ease-in 2s;
-  animation-name: fade;
-  animation-fill-mode: both;
-  animation-duration: 2s;
+table th:nth-child(2){
+  color: rgb(42, 98, 61);
 }
 
-td#Ravenclaws {
-  color: blue;
-  animation: delayResult 5s ease-in 2s;
-  animation-name: fade;
-  animation-fill-mode: both;
-  animation-duration: 2s;
+table th:nth-child(3){
+  color: rgb(34, 47, 91);
 }
 
-td#Gryffindors {
-  color: red;
-  animation: delayResult 5s ease-in 2s;
-  animation-name: fade;
-  animation-fill-mode: both;
-  animation-duration: 2s;
+table th:last-child{
+  color: rgb(116, 0, 1);
 }
 
 td {
-  color: red;
   animation: delayResult 5s ease-in 10s;
   animation-name: fade;
   animation-fill-mode: both;
@@ -130,10 +114,15 @@ table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
   padding: 15px;
+  font-size: 30pt;
 }
 
 #toHide {
   padding-bottom: 10pt;
+  font-size: 20pt;
+}
+div#nameSection {
+  font-size: 20pt;
 }
 
 caption {
@@ -142,7 +131,7 @@ caption {
 
 /* Hat */
 
-#spinner {
+.spinner {
   animation-name: spinner;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -151,7 +140,7 @@ caption {
 
 #stage {
   perspective: 1200px;
-  margin: 20px auto;
+  margin: 20px 175px;
 }
 
 @-webkit-keyframes spinner {
