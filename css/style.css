@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Harry P';
+    src: url('../fonts/HarryP.woff2') format('woff2'),
+        url('../fonts/HarryP.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 @keyframes spin {
 
   from {
@@ -8,13 +17,12 @@
   }
 }
 
-/*  The element to apply the animation to */
-/* div {
-  width: 100px;
-  height: 100px;
-  animation-name: hat;
-  animation: spin 6s infinite linear;
-} */
+
+h1 {
+  font-family: 'Harry P';
+  font-size: 72px;
+}
+
 .image {
   padding-right: 400px;
   float: right;
