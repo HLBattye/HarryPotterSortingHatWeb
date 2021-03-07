@@ -5,6 +5,7 @@ let slytherins = [];
 let ravenclaws = [];
 let gryffindors = [];
 let houseNumber = "";
+let remainderChildren = 0;
 hideElements(false);
 
 document.getElementById("result").innerHTML = " you are in ";
@@ -16,16 +17,17 @@ function hideElements(flag) {
 }
 
 function clickOKNumber() {
-  totalInHouse = document.getElementById('numberOfBeavers').value / 4;
-  totalInHouse = Math.ceil(totalInHouse);
+  totalInHouseValue = document.getElementById('numberOfBeavers').value / 4;
+  totalInHouse = Math.ceil(totalInHouseValue);
   hideElements(true);
   for (let j = 0; j < totalInHouse; j++) {
     addBlankRowToTable();
   }
+  remainderChildren = document.getElementById('numberOfBeavers').value - (Math.floor(totalInHouseValue) * 4);
 }
 
 function isHouseFull(houseNumber) {
-  return houseTotals[houseNumber - 1] == totalInHouse;
+  return houseTotals[houseNumber - 1] >= totalInHouse;
 }
 
 function addtohouse(houseNumber) {
@@ -68,10 +70,24 @@ function showHouse(houseName, nameInput, houseNumber, houseArray) {
   resetName();
 }
 
-function allocateHouse(houseName, houseArray, houseId, nameInput, houseNumber) {
+function allocateHouse(houseName, houseArray, nameInput, houseNumber) {
   console.log(houseName);
   houseArray.push(nameInput);
   playAudio(houseName, nameInput, houseNumber, houseArray);
+  let numberOfHousesFull = getNumberOfHousesFull();
+  if (numberOfHousesFull === remainderChildren) {
+    totalInHouse -= 1;
+  }
+}
+
+function getNumberOfHousesFull() {
+  let count = 0
+  for (let i = 0; i < 4; i++) {
+    if (isHouseFull(i)) {
+      count += 1;
+    }
+  }
+  return count;
 }
 
 function playSound(sound1, houseName, nameInput, houseNumber, houseArray) {
@@ -126,17 +142,17 @@ function clickOK() {
   console.log(houseTotals);
 
   if (houseNumber === 1) {
-    allocateHouse("Hufflepuff", hufflepuffs, "Hufflepuffs", nameInput, houseNumber - 1);
+    allocateHouse("Hufflepuff", hufflepuffs, nameInput, houseNumber - 1);
   }
   else if (houseNumber === 2) {
-    allocateHouse("Ravenclaw", ravenclaws, "Ravenclaws", nameInput, houseNumber - 1);
+    allocateHouse("Ravenclaw", ravenclaws, nameInput, houseNumber - 1);
   }
 
   else if (houseNumber === 3) {
-    allocateHouse("Slytherin", slytherins, "Slytherins", nameInput, houseNumber - 1);
+    allocateHouse("Slytherin", slytherins, nameInput, houseNumber - 1);
   }
   else {
-    allocateHouse("Gryffindor", gryffindors, "Gryffindors", nameInput, houseNumber - 1);
+    allocateHouse("Gryffindor", gryffindors, nameInput, houseNumber - 1);
   }
 }
 

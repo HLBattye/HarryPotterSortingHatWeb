@@ -22,19 +22,13 @@ html {
 
 h1 {
   font-size: 100px;
+  color: rgb(243, 229, 31);
 }
 
 .image {
   padding-right: 400px;
   float: right;
   position: relative;
-}
-
-#lives {
-  position: absolute;
-  top: 40%;
-  left: 27%;
-  transform: translate(-50%, -50%);
 }
 
 @keyframes fade{
