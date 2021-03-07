@@ -77,6 +77,7 @@ function allocateHouse(houseName, houseArray, nameInput, houseNumber) {
   let numberOfHousesFull = getNumberOfHousesFull();
   if (numberOfHousesFull === remainderChildren) {
     totalInHouse -= 1;
+    remainderChildren = 0;
   }
 }
 
@@ -105,6 +106,10 @@ function playSound(sound1, houseName, nameInput, houseNumber, houseArray) {
       });
     }, 1000);
   });
+
+  // showHouse(houseName, nameInput, houseNumber, houseArray);
+  // document.getElementById("hat").classList.remove("spinner");
+  // document.getElementById('nameEntered').disabled = false;
 
 }
 
