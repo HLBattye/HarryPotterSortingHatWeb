@@ -16,8 +16,24 @@ function hideElements(flag) {
   document.getElementById("toHide").hidden = flag;
 }
 
+function resetNumber() {
+  document.getElementById("numberOfBeavers").value = "";
+}
+
+function isNormalInteger(str) {
+  var n = Math.floor(Number(str));
+  return n !== Infinity && String(n) === str && n >= 0;
+}
+
 function clickOKNumber() {
-  totalInHouseValue = document.getElementById('numberOfBeavers').value / 4;
+  let totalToBeSorted = document.getElementById('numberOfBeavers').value
+  totalInHouseValue = totalToBeSorted / 4;
+  console.log(totalToBeSorted);
+  if (!isNormalInteger(totalToBeSorted)) {
+    resetNumber();
+    document.getElementById("notNumber").innerHTML = "Please enter the number of people to be sorted";
+    return;
+  }
   totalInHouse = Math.ceil(totalInHouseValue);
   hideElements(true);
   for (let j = 0; j < totalInHouse; j++) {
@@ -25,6 +41,7 @@ function clickOKNumber() {
   }
   remainderChildren = document.getElementById('numberOfBeavers').value - (Math.floor(totalInHouseValue) * 4);
 }
+
 
 function isHouseFull(houseNumber) {
   return houseTotals[houseNumber - 1] >= totalInHouse;
