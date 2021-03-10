@@ -103,18 +103,18 @@ td {
 
 #toHide {
   padding-bottom: 10pt;
-  font-size: 40pt;
+  font-size: 30pt;
   text-align: center;
   
 }
 div#nameSection {
-  font-size: 40pt;
+  font-size: 30pt;
   text-align: center;
 }
 
 input {
-  height: 40pt;
-  font-size: 40pt;
+  height: 30pt;
+  font-size: 30pt;
   width: 150pt;
 }
 
@@ -124,7 +124,6 @@ input {
 
 button {
   margin-bottom: 4px;
-  height: 40pt;
 }
 
 #notNumber {
