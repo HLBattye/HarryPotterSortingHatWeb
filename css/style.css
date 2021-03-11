@@ -16,7 +16,7 @@
     transform: rotateY(359deg);
   }
 }
-.container-fluid {
+body {
   font-family: 'Harry P';
 
 }
