@@ -114,6 +114,7 @@ div#nameSection {
 
 input {
   height: 30pt;
+  padding: 20pt 0;
   font-size: 30pt;
   width: 150pt;
 }
@@ -135,7 +136,7 @@ table.table-bordered{
   border:1px solid black;
   padding-right: 300px;
   font-size: 30pt;
-  width: 75%;
+  max-width: 550pt;
   margin: 0px auto;
 }
 table.table-bordered > tbody > tr > th{
