@@ -111,10 +111,13 @@ div#nameSection {
   font-size: 30pt;
   text-align: center;
 }
+input, input:before, input:after {
+  user-select: initial;
+ }
 
 input {
   height: 30pt;
-  padding: 20pt 0;
+  padding: 10pt 0;
   font-size: 30pt;
   width: 150pt;
 }
@@ -136,7 +139,7 @@ table.table-bordered{
   border:1px solid black;
   padding-right: 300px;
   font-size: 30pt;
-  max-width: 550pt;
+  max-width: 50%;
   margin: 0px auto;
 }
 table.table-bordered > tbody > tr > th{
