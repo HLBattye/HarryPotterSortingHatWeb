@@ -134,9 +134,8 @@ button {
 
 table.table-bordered{
   border:1px solid black;
-  padding-right: 300px;
   font-size: 30pt;
-  width: 50%;
+  max-width: 60%;
   margin: 0px auto;
 }
 table.table-bordered > tbody > tr > th{
